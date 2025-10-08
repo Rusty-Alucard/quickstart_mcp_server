@@ -7,6 +7,22 @@ Model Context Protocol (MCP) の天気サーバーのクイックスタート実
 このプロジェクトは、MCP公式チュートリアルに従って作成された天気情報サーバーです。
 National Weather Service (NWS) APIを使用して、米国内の天気予報とアラート情報を提供します。
 
+## プロジェクト構成
+
+```
+quickstart_mcp_server/
+├── README.md
+├── .gitignore
+└── weather/
+    └── node/          # Node.js/TypeScript実装
+        ├── src/
+        ├── build/
+        ├── package.json
+        └── tsconfig.json
+```
+
+将来的に他の言語実装（Python、Javaなど）を追加できるように、言語ごとにフォルダを分けています。
+
 ## 機能
 
 このサーバーは以下の2つのツールを提供します：
@@ -24,7 +40,7 @@ National Weather Service (NWS) APIを使用して、米国内の天気予報と�
 - `latitude`: 緯度（-90 から 90）
 - `longitude`: 経度（-180 から 180）
 
-## セットアップ
+## セットアップ (Node.js版)
 
 ### 前提条件
 
@@ -34,7 +50,7 @@ National Weather Service (NWS) APIを使用して、米国内の天気予報と�
 ### インストール
 
 ```bash
-cd weather
+cd weather/node
 npm install
 ```
 
@@ -59,7 +75,7 @@ code ~/Library/Application\ Support/Claude/claude_desktop_config.json
   "mcpServers": {
     "weather": {
       "command": "node",
-      "args": ["/絶対パス/quickstart_mcp_server/weather/build/index.js"]
+      "args": ["/絶対パス/quickstart_mcp_server/weather/node/build/index.js"]
     }
   }
 }
